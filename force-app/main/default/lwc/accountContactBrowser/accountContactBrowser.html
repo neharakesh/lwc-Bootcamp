@@ -1,0 +1,25 @@
+<template>
+        <div class="slds-box">
+                <h1 class="slds-text-heading_large slds-m-around_medium slds-p-around_medium">Display All Accounts and related Contacts</h1>
+                <lightning-card>
+                        
+                        <template for:each={accountList} for:item="it">
+                                <div key={it.Id} data-id={it.Id} onclick={handleAccountId}  class="slds-box slds-m-around_medium">
+                                        {it.Name}
+                                </div>
+                        </template>
+                        </lightning-card>
+
+                        <lightning-card>
+                         <h1 class="slds-text-heading_large slds-m-around_medium slds-p-around_medium">Related Contacts</h1>
+                        <template for:each={ListContacts} for:item="it">
+                                
+                                <div key={it.Id} class="slds-box slds-m-around_medium">
+                                        
+                                        <p aria-placeholder="Select an account"></p>{it.Name}
+                                </div>
+
+                        </template>
+                </lightning-card>
+        </div>
+</template>

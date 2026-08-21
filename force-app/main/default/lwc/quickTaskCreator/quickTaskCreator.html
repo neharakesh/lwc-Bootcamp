@@ -1,0 +1,17 @@
+<template>
+        <div class="slds-box">
+        <h1 class="slds-text-align_center slds-text-heading_large slds-m-around_medium slds-p-around_small">Show All Task</h1>
+        <template for:each={taskList} for:item="it">
+                <div key={it.Id} class="slds-box slds-m-around_small slds-grid">
+                        {it.Subject}
+                </div>
+
+        </template>
+        
+                <lightning-input label="Subject" placeholder="Enter Task subject" onchange={handleOnChange} class="slds-m-left_large slds-m-right_large"></lightning-input>
+        <button class="slds-button slds-button_destructive slds-grid-align-center slds-m-around_medium" onclick={addTask} >Add Task</button>
+        
+        
+        </div>
+
+</template>

@@ -1,0 +1,40 @@
+<template>
+    <lightning-radio-group name="radioGroup"
+                        class="aline"
+                        label="Radio Group"
+                        options={getOptions}
+                         
+                        
+                        
+                        type="radio"></lightning-radio-group>
+
+                        <h1>Amount</h1>
+<lightning-input
+        label="Amount"
+        type="Number"
+        onchange={handleAmount} 
+        ></lightning-input>
+
+        
+        <div>
+                <h1>Radio buttons</h1>
+                <label >
+                         <input type="radio" name="option" value="Archive" onclick={handleArchive}>
+                        Archive
+                </label>
+               
+                <label >
+                        <input type="radio" name="option" value="Archive" onclick={handleUnArchive}>
+                        UnArchive
+                </label>
+        </div>
+
+        <template lwc:if={displaySelected}>
+                <template lwc:if={displayArchive}>
+                        <p>This Content is Archive Content</p>
+                </template>
+                <template lwc:if={displayUnArchive}>
+                        <p>This Content is Unarchive Content</p>
+                </template>
+        </template>
+</template>

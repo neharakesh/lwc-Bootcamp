@@ -1,0 +1,62 @@
+<template>
+    <div class="slds-box outer-container">
+
+        <h1 class="slds-text-heading_medium slds-text-title_bold">
+            To Do List
+        </h1>
+
+        <div class="box-container">
+
+            <template for:each={arr} for:item="it" for:index="index">
+                <div
+                    key={it.Id}
+                    class="slds-grid slds-grid_align-spread container">
+
+                    <div class="check-container">
+
+                        <input
+                            type="checkbox"
+                            checked={it.checked}
+                            onchange={handleCheckbox}
+                            data-index={index} 
+                            data-id={it.Id}
+                        />
+
+                        <p class="name-conatiner">
+                            {it.name}
+                        </p>
+
+                    </div>
+
+                    <button
+                        data-id={it.Id}
+                        onclick={handleDelete}
+                        class="slds-button slds-button_destructive">
+                        Delete
+                    </button>
+
+                </div>
+
+            </template>
+
+        </div>
+
+        <div class="add-container">
+
+            <input
+                type="text"
+                aria-label="Add Task"
+                placeholder="Enter your task"
+                onchange={handleOnChange}
+            />
+
+            <button
+                onclick={add}
+                class="slds-button slds-button_brand">
+                Add
+            </button>
+
+        </div>
+
+    </div>
+</template>

@@ -1,0 +1,24 @@
+<template>
+        
+        <h1>Name:</h1>
+        <lightning-input type="text" required="true" placeholder="Enter Your Name" onchange={handleName}></lightning-input>
+        <h1>Date Of Birth</h1>
+        
+        <lightning-input type="Date" required="true" placeholder="Enter Your Dob" onchange={handleDob}></lightning-input>
+        
+
+        <button class="slds-button slds-button_brand" onclick={handleOnClick} >Submit</button>
+        <template lwc:if={result}>
+               <lightning-card title={result.name} icon-name="standard:account">
+
+                        <p>
+                        Have a good Day
+                        </p>
+                        <p slot="footer">
+                        {result.name}
+                        {result.symbol}
+                        </p>
+                </lightning-card>
+                
+        </template>
+</template>

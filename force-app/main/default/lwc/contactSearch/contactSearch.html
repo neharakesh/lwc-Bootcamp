@@ -1,0 +1,14 @@
+<template>
+        <div class="slds-box">
+                <h1 class="slds-m-around_medium slds-p-around_medium slds-text-heading_large slds-text-align-center">Search Contact</h1>
+                <lightning-card class="slds-p-around_medium">
+                        <label class="slds-m-around_medium slds-p-around_medium slds-text-heading_small">Enter Name:</label>
+                        <lightning-input placeholder="Example:John" class="slds-m-around_medium" value={searchName} onchange={handleinput} ></lightning-input>
+                        
+                        <template for:each={showListContact} for:item="it">
+                                <p key={it.id} class="slds-grid slds-p-around_medium">{it.Name}</p>
+                        
+                        </template>
+                </lightning-card>
+        </div>
+</template>

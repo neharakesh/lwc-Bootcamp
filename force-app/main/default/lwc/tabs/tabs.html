@@ -1,0 +1,19 @@
+<template>
+
+        <template for:each={tabs} for:item="tab">
+                <button key={tab.id} type="button" onclick={handleTabChange} data-id={tab.id}>
+                        {tab.label}
+                </button>
+        </template>
+
+        <template for:each={tabs} for:item="tab">
+                <div key={tab.id}>
+
+                        <template if:true={tab.display}>
+                                {tab.message}
+                        </template>
+                </div>
+        </template>
+
+
+</template>

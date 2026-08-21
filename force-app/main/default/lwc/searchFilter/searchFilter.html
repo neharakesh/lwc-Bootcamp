@@ -1,0 +1,61 @@
+<template>
+
+        <div class="slds-box">
+
+                <div class="header">
+                <h1 style="font-size: xx-large;">Product Search</h1>
+                
+                </div>
+
+                <div class="search-box">
+                <span class="search-icon">⌕</span>
+
+                <input
+                        type="text"
+                        placeholder="Search products..."
+                        onchange={handleSearch}
+                />
+                </div>
+
+                <template lwc:if={result}>
+
+                <div class="slds-col slds-size_1-of-3 slds-m-bottom_medium " style="padding: 12px ">
+
+                        <template for:each={result} for:item="it">
+
+                        <div class="product-card slds-card slds-p-around " key={it.name}>
+
+                                <div class="product-info">
+
+                                <h2>{it.name}</h2>
+
+                                <p class="category">
+                                        {it.category}
+                                </p>
+
+                                </div>
+
+                                <div class="price">
+                                ${it.price}
+                                </div>
+
+                        </div>
+
+                        </template>
+
+                </div>
+
+                </template>
+
+                <template lwc:else>
+
+                <div class="no-results">
+                        <h2>No Results Found</h2>
+                        <p>Try searching for another product.</p>
+                </div>
+
+                </template>
+
+        </div>
+
+</template>

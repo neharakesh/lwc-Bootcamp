@@ -1,0 +1,40 @@
+<template>
+ <lightning-card  title="Hello">
+            <lightning-button label="New" slot="actions"></lightning-button>
+            <p class="slds-p-horizontal_small">
+            <template for:each={tasklist} for:item="eachTask">
+                <div key={eachTask.taskid}>
+                        {eachTask.taskName} -{eachTask.taskProgress}
+                </div>
+                
+            </template>
+            </p>
+            <p slot="footer">Card Footer</p>
+        </lightning-card>
+
+
+
+         <lightning-card  title="Hello">
+            <lightning-button label="New" slot="actions"></lightning-button>
+            <p class="slds-p-horizontal_small">
+            <template iterator:it={tasklist}>
+                
+                <template lwc:if={it.first}>
+                        
+                        {it.value.taskName} -{it.value.taskProgress}
+                
+                </template>
+                <div key={it.value.taskid}>
+                        {it.value.taskName} -{it.value.taskProgress}
+                </div>
+                <template lwc:if={it.last}>
+                        
+                        {it.value.taskName} -{it.value.taskProgress}
+                
+                </template>
+                
+            </template>
+            </p>
+            <p slot="footer">Card Footer</p>
+        </lightning-card>
+</template>

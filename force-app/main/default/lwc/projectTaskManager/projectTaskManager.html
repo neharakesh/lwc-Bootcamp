@@ -1,0 +1,25 @@
+<template>
+        
+
+        <h1 class="slds-text-heading_large slds-m-around_large slds-p-around_medium slds-text-align_center"> Show Projects</h1>
+        <lightning-card >
+                <template for:each={ListProject} for:item="project" >
+                <div key={project.Id} data-id={project.Id}  onclick={handleOnEachProject}>
+                        <p class="slds-text-heading_small slds-text-m-around_medium slds-p-around_medium">{project.Name}</p>
+                        <input type="text" placeholder="Enter task Name" required onchange={handleOnChange}  class="slds-m-left_large"/>
+                        <button onclick={handleAddTask} class="slds-m-left_large">Add Task</button>
+                </br>
+                
+                </div>
+        </template>
+        </lightning-card>
+
+        <lightning-datatable
+        key-field="Id" data={showTask} columns={taskColumn} onrowselection={handleSelectedRow}
+        ></lightning-datatable>
+
+        
+
+        
+        
+</template>

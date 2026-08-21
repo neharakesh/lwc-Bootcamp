@@ -1,0 +1,23 @@
+.rating-container {
+    padding: 20px;
+}
+
+.stars {
+    display: flex;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.star {
+    cursor: pointer;
+}
+
+.clear-button {
+    border: solid black 1px;
+    background: none;
+    color: #0176d3;
+    cursor: pointer;
+    padding: 4px;
+    margin: auto;
+
+}

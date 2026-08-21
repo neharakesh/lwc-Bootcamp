@@ -1,0 +1,28 @@
+<template>
+        <div class="container">
+                <h1>Frequently Asked Questions!</h1>
+
+                <template for:each={data} for:item="it" for:index="index">
+
+                <div key={it.id} class="faq-item">
+
+                        <p>{it.question}</p>
+
+                        <lightning-button-icon
+                        icon-name="utility:chevronright"
+                        alternative-text="Expand"
+                        title="Expand"
+                        data-index={index}
+                        onclick={handleExpand} 
+                        class="button-class">
+                        </lightning-button-icon>
+
+                        <template lwc:if={it.showAnswer}>
+                        {it.answer}
+                        </template>
+
+                </div>
+
+                </template>
+        </div>
+</template>

@@ -1,0 +1,40 @@
+<template>
+
+    <div class="rating-container">
+
+        <h1>Star Rating</h1>
+
+        <div class="stars">
+
+            <template for:each={stars} for:item="it">
+
+                <lightning-icon
+                    key={it.id}
+                    icon-name={it.icon}
+                    alternative-text="Star"
+                    data-id={it.id}
+                    onclick={handleRating}
+                    onmouseover={handleMouseOver}
+                    onmouseout={handleMouseOut}
+                    class="star">
+                </lightning-icon>
+
+            </template>
+
+        </div>
+
+        <template lwc:if={selectedRating}>
+            <p>
+                You rated this {selectedRating} out of 5
+            </p>
+        </template>
+
+        <button
+            class="clear-button"
+            onclick={handleClear}>
+            Clear rating
+        </button>
+
+    </div>
+
+</template>

@@ -1,0 +1,37 @@
+<template>
+    <div
+        class="slds-box"
+        style="max-width: 450px; margin: 40px auto; padding: 30px; text-align: center; border-radius: 12px; background: #f4f6f9; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+
+        <h1
+            style="font-size: 28px; font-weight: 600; margin-bottom: 25px; color: #181818;">
+            Counter
+        </h1>
+
+        <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+
+            <button
+                class="slds-button slds-button_brand"
+                onclick={handleAdd}
+                value={variable}
+                style="padding: 10px 20px; border-radius: 8px;">
+                Count +1
+            </button>
+
+            <button
+                class="slds-button slds-button_outline-brand"
+                onclick={handleSub}
+                value={variable}
+                style="padding: 10px 20px; border-radius: 8px;">
+                Count -1
+            </button>
+
+        </div>
+
+        <div
+            style="margin-top: 25px; font-size: 36px; font-weight: bold;">
+            {variable}
+        </div>
+
+    </div>
+</template>

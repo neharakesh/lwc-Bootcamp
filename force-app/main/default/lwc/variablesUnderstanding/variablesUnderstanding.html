@@ -1,0 +1,15 @@
+<template>
+        <div class="slds-card">
+            hello    {Name}!
+                Your current {currentDate} Subscriber is {SubscriberScore}
+                <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" value={memberStatus} onchange={updateStatus} label="Enter some text"></lightning-input>
+            <lightning-input type="Number" value={handleWatchTime} onchange={_handleWatchTimeMethod} label="Enter some text"></lightning-input>
+        </div>
+        <p>My name is:{memberStatus}</p>
+        <p>{handleWatchTimeMethod}</p>
+
+        </div>
+
+    
+</template>

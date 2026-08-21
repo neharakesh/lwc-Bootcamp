@@ -1,0 +1,127 @@
+<template>
+
+    <div class="outer slds-p-around_large">
+
+        <!-- Header -->
+        <div class="slds-m-bottom_large">
+            <h1 class="slds-text-heading_large slds-text-title_bold">
+                🛒 Shopping Cart
+            </h1>
+            <p class="slds-text-color_weak slds-m-top_x-small">
+                Browse products and add them to your cart
+            </p>
+        </div>
+
+
+        <!-- PRODUCTS -->
+        <div class="slds-m-bottom_x-large">
+
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+                Products
+            </h2>
+
+            <div class="slds-grid slds-wrap slds-gutters">
+
+                <template for:each={data} for:item="it">
+
+                    <div
+                        key={it.id}
+                        class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-bottom_medium">
+
+                        <article class="product-card slds-card">
+
+                            <!-- Image -->
+                            <div class="image-container">
+                                <img
+                                    src={it.image}
+                                    alt={it.name}
+                                    class="product-image"
+                                />
+                            </div>
+
+                            <!-- Product information -->
+                            <div class="slds-p-around_medium">
+
+                                <h3 class="slds-text-heading_small">
+                                    {it.name}
+                                </h3>
+
+                                <p class="category slds-m-top_x-small">
+                                    {it.category}
+                                </p>
+
+                                <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center slds-m-top_medium">
+
+                                    <span class="price">
+                                        ${it.price}
+                                    </span>
+
+                                    <button
+                                        class="slds-button slds-button_brand"
+                                        onclick={handleAddCart}
+                                        data-id={it.id}>
+                                        Add To Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </template>
+
+            </div>
+
+        </div>
+
+
+        <!-- CART -->
+        <div class="cart-section slds-card">
+
+            <div class="slds-p-around_medium">
+
+                <h2 class="slds-text-heading_medium">
+                    🛒 Your Cart
+                </h2>
+
+            </div>
+
+            <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+
+                <template for:each={cart} for:item="it">
+
+                    <div
+                        key={it.id}
+                        class="cart-item slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+
+                        <div>
+                            <p class="slds-text-heading_small">
+                                {it.name}
+                            </p>
+
+                            <p class="slds-text-color_weak">
+                                Quantity: {it.quantity}
+                            </p>
+                        </div>
+
+                        <div class="cart-price">
+                            ${it.price}
+                        </div>
+
+                    </div>
+                    
+
+                </template>
+
+            </div>
+            <div>
+                <h1 style="font-size: x-large; font-weight:500; margin-left:20px; Padding:18px;">Total Amount : {TotalAmount}</h1>
+            </div>
+        </div>
+
+    </div>
+
+</template>

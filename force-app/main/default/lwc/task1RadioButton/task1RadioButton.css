@@ -1,0 +1,15 @@
+.aline{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+}
+.sldc-grid{
+        display: flex;
+}
+.slds-radio-faux{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+}

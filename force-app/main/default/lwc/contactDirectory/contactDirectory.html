@@ -1,0 +1,15 @@
+<template>
+        <div class="slds-box">
+
+        <h1 class="slds-text-heading_large slds-text-align_center slds-p-around_medium">Show All Contacts</h1>
+        <template if:true={isloading}>
+                <lightning-spinner alternative-text="loading" size="medium"></lightning-spinner>
+        </template>
+        <lightning-card  >
+
+                <lightning-datatable key-field="Id" columns={columns} data={contactList}>
+
+                </lightning-datatable>
+        </lightning-card>
+        </div>
+</template>
