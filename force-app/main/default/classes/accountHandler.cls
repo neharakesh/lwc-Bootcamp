@@ -5,7 +5,7 @@ public with sharing class accountHandler {
     @AuraEnabled(Cacheable=true)
     public static List<Account> getAccounts(){
         try {
-            return [SELECT id,Name,(SELECT Name from Contacts) From Account];
+            return [SELECT id,Name,Phone From Account];
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
@@ -38,4 +38,15 @@ public with sharing class accountHandler {
             throw new AuraHandledException(e.getMessage());
         }
     }
+
+    @AuraEnabled(Cacheable=true)
+    public static List<Account> getAccountRecord(string accountName){
+        try {
+            return [SELECT id,Name FROM Account WHERE Name=:accountName];
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+
+    
 }

@@ -1,0 +1,14 @@
+<template>
+        <div>
+                <h1 class="slds-text-heading_large slds-m-around_medium slds-p-around_medium slds-text-align_center">All Contact Records</h1>
+                
+                        <template for:each={ListOfConctact} for:item="eachContact">
+                                <div key={eachContact.Id}>
+                                        <p>{eachContact.Name}</p>
+                                        <p>{eachContact.Id}</p>
+                                </div>
+                        </template>
+                
+                
+        </div>
+</template>

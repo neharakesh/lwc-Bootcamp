@@ -12,6 +12,17 @@ public with sharing class contactController {
             throw new AuraHandledException(e.getMessage());
         }
     }
+
+    @AuraEnabled(cacheable=true)
+    public static List<Contact> getContactsById(Id accId){
+        try {
+            return [SELECT id, Name,AccountId From Contact WHERE AccountId=:accId];
+            
+            
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
     
 
 }

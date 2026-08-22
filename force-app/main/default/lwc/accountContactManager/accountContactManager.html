@@ -1,0 +1,17 @@
+<template>
+        <div>
+                <h1 class="slds-text-heading_large slds-m-around_medium slds-p-around_medium slds-text-align_center">All Account Records</h1>
+                
+                        <template for:each={accountList} for:item="eachAccount" >
+                                <div key={eachAccount.Id} data-id={eachAccount.Id} onclick={handleContact}>
+                                        <p>{eachAccount.Name}</p>
+                                </div>
+
+                                
+                        </template>
+                
+                        <div>
+                                <c-contact-list account-id={accountId}></c-contact-list>
+                        </div>
+        </div>
+</template>
