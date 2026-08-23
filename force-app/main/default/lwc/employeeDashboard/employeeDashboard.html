@@ -1,0 +1,28 @@
+<template>
+        <div>
+        <h1 class="slds-text-heading_large slds-m-around_medium slds-p-around_medium slds-text-align_center">Employee Dashboard</h1>
+        <div class="slds-grid slds-wrap">
+                <div class="slds-size_1-of-3 slds-p-around-small">
+                        <div class="slds-box slds-theme_default">
+                        <c-employee-header employee-name={employeeName} employee-role={employeeRole} department={department}></c-employee-header>
+                </div>
+                </div>
+                <div class="slds-size_1-of-3 slds-p-around-small">
+                        <div class="slds-box slds-theme_default">
+                        <c-employee-stats primary-skill={primarySkill}></c-employee-stats>
+                </div>
+                </div>
+                <div class="slds-size_1-of-3 slds-p-around-small">
+                        <div class="slds-box slds-theme_default">
+                        <c-employee-skills experience={expirence} number-of-projects={numberProjects}></c-employee-skills>
+                </div>
+                </div>
+                
+        
+                
+        </div>
+        
+        <button class="slds-button slds-button_brand slds-align_absolute-center" onclick={handleSubmit}>Change Employee</button>
+        </div>
+
+</template>
