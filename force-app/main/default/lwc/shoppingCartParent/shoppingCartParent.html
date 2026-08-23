@@ -1,0 +1,23 @@
+<template>
+        <div>
+                <c-product-list onaddtocart={handleAddToCart}></c-product-list>
+                <h1 class="slds-text-heading_large slds-text-align_center slds-m-around_medium slds-p-around_medium">Shopping Cart</h1>
+                <template for:each={cart} for:item="cartItem">
+                        <div key={cartItem.id} class="slds-box slds-grid slds-grid_vertical-align-center">
+                                <div class="slds-text_heading_medium slds-size_1-of-2">
+                                        <p>Product: {cartItem.productName}</p>
+                                </div>
+                                <div class="slds-text_heading_medium slds-size_1-of-2">
+                                        <p>Price:{cartItem.price}</p>
+                                </div>
+                                
+                        </div>
+                
+                </template>
+                <div class="slds-box slds-grid slds-grid_vertical-align-center">
+                                <p class="slds-text_heading_medium slds-size_1-of-2">Total Amount:{totalAmount}</p>
+                                <p class="slds-text_heading_medium slds-size_1-of-2">Total Items:{totalItems}</p>
+                        </div>
+        </div>
+        
+</template>
