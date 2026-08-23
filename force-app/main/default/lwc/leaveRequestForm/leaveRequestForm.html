@@ -1,0 +1,76 @@
+<template>
+
+                <lightning-card title="Leave Request Form">
+                <div class="slds-p-around_medium">
+
+                <!-- Leave Balance -->
+                <div class="slds-box slds-theme_shade slds-m-bottom_medium">
+
+                        <p>
+                        Available Leave Balance:
+                        {leaveBalance} Days
+                        </p>
+
+                </div>
+
+                <!-- Leave Type -->
+                <lightning-combobox
+                        label="Leave Type"
+                        value={leaveType}
+                        options={leaveTypeOptions}
+                        onchange={handleLeaveTypeChange}
+                        required>
+                </lightning-combobox>
+
+                <!-- Start Date -->
+                <lightning-input
+                        class="slds-m-top_small"
+                        type="date"
+                        label="Start Date"
+                        value={startDate}
+                        onchange={handleStartDateChange}
+                        required>
+                </lightning-input>
+
+                <!-- End Date -->
+                <lightning-input
+                        class="slds-m-top_small"
+                        type="date"
+                        label="End Date"
+                        value={endDate}
+                        onchange={handleEndDateChange}
+                        required>
+                </lightning-input>
+
+                <!-- Reason -->
+                <lightning-textarea
+                        class="slds-m-top_small"
+                        label="Reason"
+                        value={reason}
+                        onchange={handleReasonChange}
+                        required>
+                </lightning-textarea>
+
+                <!-- Error -->
+                <template if:true={errorMessage}>
+                        <div class="slds-text-color_error slds-m-top_medium">
+                        {errorMessage}
+                        </div>
+                </template>
+
+                <!-- Submit -->
+                <div class="slds-m-top_medium">
+
+                        <lightning-button
+                        label="Submit Leave Request"
+                        variant="brand"
+                        onclick={handleSubmit}>
+                        </lightning-button>
+
+                </div>
+
+                </div>
+
+        </lightning-card>
+
+</template>
