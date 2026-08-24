@@ -1,0 +1,26 @@
+<template>
+        <div>
+                <template if:true={selectedOpportunity}>
+                        <div class="slds-box">
+                                <p>{selectedOpportunity.Name}</p>
+                        </div>
+                        <div class="slds-box">
+                                <p> {selectedOpportunity.StageName}</p>
+                        </div>
+                        <div class="slds-box">
+                                <p> {selectedOpportunity.Amount}</p>
+                        </div>
+                        <div class="slds-box">
+                                <p>  {selectedOpportunity.ClosedDate}</p>
+                        </div>
+                        
+                
+                        
+                
+
+                </template>
+                <template if:false={selectedOpportunity}>
+                        Select an opportunity
+                </template>
+        </div>
+</template>

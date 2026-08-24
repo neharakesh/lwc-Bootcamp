@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+
         <masterLabel>StatusMessageChannel</masterLabel>
+
         <isExposed>true</isExposed>
-        <description>This is a sample Lightning Message Channel for handling agent online offline status.</description>
+
+        <description>
+                Sends selected Opportunity Id
+        </description>
+
         <lightningMessageFields>
-                <fieldName>status</fieldName>
-                <description>This is the status of the logged in agent.</description>
+                <fieldName>oppId</fieldName>
+                <description>Selected Opportunity Id</description>
         </lightningMessageFields>
+
+        <lightningMessageFields>
+                <fieldName>oppName</fieldName>
+                 <description>Selected Opportunity Name</description>
+        </lightningMessageFields>
+
 </LightningMessageChannel>
