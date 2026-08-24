@@ -1,0 +1,36 @@
+<template>
+
+        <div>
+
+                <h1 class="slds-text-heading_large slds-m-around_medium slds-p-around_medium slds-text-align_center">
+                Case Records
+                </h1>
+
+                <template for:each={caseList} for:item="eachCase">
+
+                <div
+                        key={eachCase.Id}
+                        
+                        
+                >
+
+                        <lightning-card>
+
+                        <p>Case Number: {eachCase.CaseNumber}</p>
+
+                        <p>Status: {eachCase.Status}</p>
+
+                        <p>Priority: {eachCase.Priority}</p>
+
+                        <button class="slds-button slds-button_brand" onclick={handleOnClick} data-id={eachCase.Id}>Submit</button>
+
+                        </lightning-card>
+                        
+
+                </div>
+
+                </template>
+
+        </div>
+
+</template>

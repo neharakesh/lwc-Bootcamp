@@ -20,5 +20,22 @@ public with sharing class casesHandler {
             throw new AuraHandledException(e.getMessage());
         }
     }
+
+    @AuraEnabled(Cacheable=true)
+    public static List<Case> getCaseList(){
+        try {
+            return [SELECT id,CaseNumber,Status,Priority FROM Case];
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+    @AuraEnabled(Cacheable=true)
+    public static List<Case> getCaseById(Id caseId){
+        try {
+            return [SELECT id,CaseNumber,Status,Priority FROM Case WHERE id=:caseId];
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
     
 }

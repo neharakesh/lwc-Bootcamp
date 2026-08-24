@@ -1,0 +1,12 @@
+<template>
+        <div>
+                <template if:true={selectedCase}>
+                        <p>{selectedCase.Subject}</p>
+                        <p>{selectedCase.Status}</p>
+                        <p>{selectedCase.Priority}</p>
+                </template>
+                <template if:false={selectedCase}>
+                        <p>Please select a case</p>
+                </template>
+        </div>
+</template>
