@@ -1,0 +1,45 @@
+<!-- recordViewCustomLayout.html -->
+<template>
+        <h1>Account quick View</h1>
+        <template if:true={viewMode}>
+        <lightning-record-view-form record-id={recordId} object-api-name="Account">
+        <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Name"></lightning-output-field>
+                <lightning-output-field field-name="Phone"></lightning-output-field>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Industry"></lightning-output-field>
+                <lightning-output-field field-name="AnnualRevenue"></lightning-output-field>
+                <lightning-output-field field-name="Type"></lightning-output-field>
+                <!-- <lightning-output-field field-name="BillingAddress"></lightning-output-field> -->
+        </div>
+        </div>
+        <button class="slds-button slds-button_brand" onclick={handleEdit}>Edit Account</button>
+        </lightning-record-view-form>
+
+        </template>
+        
+                
+                        <template if:false={viewMode}>
+                                <lightning-record-edit-form object-api-name="Account" record-id={recordId}>
+                                <lightning-messages></lightning-messages>
+                                <div class="slds-grid">
+                                <div class="slds-col slds-size_1-of-2">
+                                        <lightning-input-field field-name="Name"></lightning-input-field>
+                                        <lightning-input-field field-name="Phone"></lightning-input-field>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                        <lightning-input-field field-name="Industry"></lightning-input-field>
+                                        <lightning-input-field field-name="AnnualRevenue"></lightning-input-field>
+                                        <lightning-input-field field-name="Type"></lightning-input-field>
+                                </div>
+                                </div>
+                                <div class="slds-m-top_medium">
+                                <lightning-button type="submit" variant="brand" label="Edit"></lightning-button>
+                                </div>
+                                </lightning-record-edit-form>
+                        </template>
+</template>
+
+        
