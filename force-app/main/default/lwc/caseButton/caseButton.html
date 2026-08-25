@@ -1,0 +1,9 @@
+<template>
+        <button class="slds-button slds-button_brand" onclick={handleOnclick}>Create Case</button>
+        <template if:true={showFlow}>
+                <lightning-flow flow-api-name="CreateCaseTask2" onstatuschange={handleStatus} ></lightning-flow>
+        </template>
+        <button class="slds-button slds-button_brand" onclick={handleReset}>Reset</button>
+        
+        
+</template>
