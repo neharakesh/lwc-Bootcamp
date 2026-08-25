@@ -1,0 +1,43 @@
+<template>
+        <lightning-card title="Case Status Updater">
+
+                <div class="slds-p-around_medium">
+
+                <template if:true={caseData}>
+
+                        <p>
+                        <strong>Case Number:</strong>
+                        {caseData.CaseNumber}
+                        </p>
+
+                        <p>
+                        <strong>Status:</strong>
+                        {caseData.Status}
+                        </p>
+
+                        <p>
+                        <strong>Subject:</strong>
+                        {caseData.Subject}
+                        </p>
+
+                        <lightning-button
+                        class="slds-m-top_medium"
+                        label="Mark Case as Resolved"
+                        variant="brand"
+                        onclick={handleResolve}>
+                        </lightning-button>
+
+                </template>
+
+                <template if:true={caseError}>
+
+                        <p class="slds-text-color_error">
+                        Error loading Case
+                        </p>
+
+                </template>
+
+                </div>
+
+        </lightning-card>
+</template>

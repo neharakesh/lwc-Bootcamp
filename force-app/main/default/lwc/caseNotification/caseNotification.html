@@ -1,0 +1,27 @@
+<template>
+
+    <lightning-card title="Case Notification">
+
+        <div class="slds-p-around_medium">
+
+            <template if:true={notificationMessage}>
+
+                <p class="slds-text-heading_small">
+                    {notificationMessage}
+                </p>
+
+            </template>
+
+            <template if:false={notificationMessage}>
+
+                <p>
+                    No Case updates received.
+                </p>
+
+            </template>
+
+        </div>
+
+    </lightning-card>
+
+</template>

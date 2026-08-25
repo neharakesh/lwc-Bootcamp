@@ -30,9 +30,20 @@ public with sharing class casesHandler {
         }
     }
     @AuraEnabled(Cacheable=true)
-    public static List<Case> getCaseById(Id caseId){
+    public static Case getCaseById(Id caseId){
         try {
             return [SELECT id,CaseNumber,Status,Priority FROM Case WHERE id=:caseId];
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+    @AuraEnabled
+    public static Case updateCaseStatus(Id caseId){
+        try {
+            Case caseList=[SELECT Id,CaseNumber,Status,Subject FROM Case WHERE Id=:caseId LIMIT 1];
+            caseList.Status='closed';
+            update caseList;
+            return caseList;
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }

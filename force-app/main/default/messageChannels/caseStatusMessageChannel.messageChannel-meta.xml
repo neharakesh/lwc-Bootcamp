@@ -1,18 +1,3 @@
-<!-- <?xml version="1.0" encoding="UTF-8"?>
-<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
-        <masterLabel>Case Selection</masterLabel>
-        <isExposed>true</isExposed>
-        <description>Used to send selected Case Id</description>
-
-        <lightningMessageFields>
-                <fieldName>caseId</fieldName>
-                <description>Selected Case Id</description>
-    </lightningMessageFields>
-</LightningMessageChannel> -->
-
-
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
 
