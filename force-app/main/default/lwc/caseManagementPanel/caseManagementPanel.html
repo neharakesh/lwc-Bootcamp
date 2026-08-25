@@ -1,0 +1,80 @@
+<template>
+        <h1 class="slds-text-heading_large slds-m-around_medium slds-p-around_medium slds-text-align_center">Display case Information</h1>
+        
+        
+<template if:true={ShowData}>
+        <lightning-record-view-form record-id={recordId} object-api-name="Case">
+        <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="CaseNumber"></lightning-output-field>
+                <lightning-output-field field-name="Subject"></lightning-output-field>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Status"></lightning-output-field>
+                <lightning-output-field field-name="Priority"></lightning-output-field>
+        </div>
+        </div>
+        </lightning-record-view-form>
+        <button class="slds-button slds-button_brand" onclick={handleEdit} >Edit</button>
+
+</template>
+        
+
+<!-- edit form -->
+
+        <template if:true={editData}>
+                <lightning-record-edit-form record-id={recordId} object-api-name="Case">
+                <lightning-messages></lightning-messages>
+                <lightning-input-field field-name="Status"></lightning-input-field>
+                <lightning-input-field field-name="Priority"></lightning-input-field>
+                <lightning-input-field field-name="Subject"></lightning-input-field>
+                <lightning-input-field field-name="Description"></lightning-input-field>
+                <div class="slds-align_absolute-center slds-p-around_medium">
+                <lightning-button
+                        class="slds-m-around_xx-small"
+                        label="Cancel"
+                        onclick={handleReset}
+                ></lightning-button>
+                <lightning-button
+                        class="slds-m-around_xx-small"
+                        label="Save"
+                        type="submit"
+                        variant="brand"
+                        onclick={showEditNotification}
+                ></lightning-button>
+                <lightning-button
+                        class="slds-m-around_xx-small"
+                        
+                        type="button"
+                        variant="brand"
+                        label="Reset"
+                        onclick={handleReset}
+                ></lightning-button>
+                </div>
+                </lightning-record-edit-form>
+        </template>
+
+
+        <!-- create case -->
+        <button class="slds-button slds-button_brand" onclick={handleCreate} >Create Case</button>
+        <template if:true={createCase}>
+                <lightning-record-edit-form object-api-name="Case" onsuccess={saveCreatedData}>
+                <lightning-messages></lightning-messages>
+                <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field field-name={Origin}></lightning-input-field>
+                        <lightning-input-field field-name={Status}></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                        <!-- More lightning-input-field components here -->
+                        <lightning-input-field field-name={Type}></lightning-input-field>
+                        <lightning-input-field field-name={Priority}></lightning-input-field>
+                        <lightning-input-field field-name={Reason}></lightning-input-field>
+                        <lightning-input-field field-name={Subject}></lightning-input-field>
+                </div>
+                </div>
+                <lightning-button type="submit" variant="brand" label="Submit" class="slds-grid slds-align_absolute-center"></lightning-button>
+                </lightning-record-edit-form>
+        </template>
+</template>
+
