@@ -1,0 +1,28 @@
+<template>
+        <h1 class="slds-m-around_medium slds-p-around_medium slds-text-heading_medium slds-text-align_center">Quick contact Creator</h1>
+        <lightning-card class="slds-p-around_large slds-m-around_medium" >
+                
+        
+                <lightning-record-edit-form object-api-name="Contact" onsuccess={handleContactCreated}>
+                <lightning-messages></lightning-messages>
+                <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2 ">
+                        <lightning-input-field field-name={firstName}></lightning-input-field>
+                        <lightning-input-field field-name={LastName}></lightning-input-field>
+                        
+                        
+                        
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field field-name={Email}></lightning-input-field>
+                        <lightning-input-field field-name={Phone}></lightning-input-field>
+                        <lightning-input-field field-name="AccountId" value={recordId}></lightning-input-field>
+                </div>
+                </div>
+                <lightning-button type="submit" variant="brand" label="Create Contact" onclick={showNotification}></lightning-button>
+                <lightning-button type="button" variant="brand" label="Reset" onclick={resetData}></lightning-button>
+                </lightning-record-edit-form>
+        </lightning-card>
+        
+
+</template>
