@@ -7,7 +7,7 @@
         <lightningMessageFields>
                 <fieldName>caseId</fieldName>
                 <description>Selected Case Id</description>
-    </lightningMessageFields>
+        </lightningMessageFields>
 </LightningMessageChannel> -->
 
 

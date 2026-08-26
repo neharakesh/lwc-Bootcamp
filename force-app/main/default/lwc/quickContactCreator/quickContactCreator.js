@@ -1,4 +1,6 @@
-import { api, LightningElement } from 'lwc';
+import { api, LightningElement, wire } from 'lwc';
+import { getRecord,getFieldValue } from 'lightning/uiRecordApi';
+import ACCOUNT_NAME from '@salesforce/schema/Account.Name'
 import FIRST_NAME from '@salesforce/schema/Contact.FirstName'
 import Last_NAME from '@salesforce/schema/Contact.LastName'
 import PHONE from '@salesforce/schema/Contact.Phone'
@@ -13,6 +15,13 @@ export default class QuickContactCreator extends LightningElement {
         Phone=PHONE;
         Email=EMAIL;
         Title=TITLE;
+
+
+        @wire(getRecord, { records: [ { recordIds:'recordId', fields: [ACCOUNT_NAME] } ] })
+        account
+        get acccountName(){
+                return getFieldValue(this.account.data,ACCOUNT_NAME)
+        }
         handleContactCreated(){
                 console.log("inside handle contact")
         }

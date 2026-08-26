@@ -1,7 +1,7 @@
 <template>
         <h1 class="slds-m-around_medium slds-p-around_medium slds-text-heading_medium slds-text-align_center">Quick contact Creator</h1>
         <lightning-card class="slds-p-around_large slds-m-around_medium" >
-                
+                <h1>Contact Created for {accountName}</h1>
         
                 <lightning-record-edit-form object-api-name="Contact" onsuccess={handleContactCreated}>
                 <lightning-messages></lightning-messages>
