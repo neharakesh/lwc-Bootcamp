@@ -10,7 +10,7 @@
         </description>
 
         <lightningMessageFields>
-                <fieldName>caseId</fieldName>
+                <fieldName>subject</fieldName>
                 <description>Id of the Case</description>
         </lightningMessageFields>
 

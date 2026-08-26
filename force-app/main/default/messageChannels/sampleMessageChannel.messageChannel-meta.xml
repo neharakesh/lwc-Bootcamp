@@ -3,8 +3,13 @@
         <masterLabel>SampleMessageChannel</masterLabel>
         <isExposed>true</isExposed>
         <description>This is a sample Lightning Message Channel.</description>
-        <lightningMessageFields>
+        <!-- <lightningMessageFields>
                 <fieldName>recordId</fieldName>
                 <description>This is the record Id that changed</description>
+        </lightningMessageFields> -->
+         <lightningMessageFields>
+                <fieldName>searchField</fieldName>
+                <description>This is the record Id that changed</description>
         </lightningMessageFields>
+        
 </LightningMessageChannel>
