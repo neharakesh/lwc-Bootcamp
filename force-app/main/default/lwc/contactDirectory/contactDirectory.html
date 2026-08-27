@@ -7,9 +7,9 @@
         </template>
         <lightning-card  >
 
-                <lightning-datatable key-field="Id" columns={columns} data={contactList}>
-
-                </lightning-datatable>
+                <lightning-datatable key-field="Id" columns={columns} data={contactList} onrowselection={handleRowSelection}></lightning-datatable>
+                <button class="slds-button slds-button_brand" disabled={isDisabled}  onclick={handleOnClick}>Submit</button>
+                <h1> show heading</h1>
         </lightning-card>
         </div>
 </template>

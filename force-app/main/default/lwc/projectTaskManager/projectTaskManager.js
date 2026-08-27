@@ -4,6 +4,7 @@ import getProjects from '@salesforce/apex/ProjectController.getProject'
 import getTasks from '@salesforce/apex/TaskController.getTaskByProject'
 import updateTaskStatus from '@salesforce/apex/TaskController.updateTaskStatus'
 import createTask from '@salesforce/apex/TaskController.createTask'
+import openCase from '@salesforce/apex/TaskController.openCase';
 export default class ProjectTaskManager extends LightningElement {
         displayError;
         ListProject=[];
@@ -104,6 +105,8 @@ export default class ProjectTaskManager extends LightningElement {
                         })
                 
         }
-        
+        get openCaseCount(){
+                return openCase();
+        }
         
 }

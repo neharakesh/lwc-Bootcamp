@@ -31,4 +31,15 @@ public with sharing class TaskController {
         update updateTask;
     
     }
+
+    @AuraEnabled
+    public static Integer openCase(){
+        try {
+            list<Tasks__c> listTask=[select id,Name,status__c from Tasks__c Where status__c!='Closed'];
+            return listTask.size();
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+    
 }
