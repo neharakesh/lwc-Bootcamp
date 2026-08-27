@@ -1,5 +1,7 @@
 <template>
         <div class="slds-box">
+
+
                 <h1 class="slds-text-heading_large slds-text-align_center slds-m-around_medium">Support Console</h1>
                 <template for:each={listAccounts} for:item="account">
                         <div key={account.Id} class="slds-grid slds-box" onclick={handleId} data-id={account.Id}>
@@ -14,8 +16,6 @@
                                         <p>Case Id:{caseItem.Id}</p>
                                         <p>Case status:{caseItem.Status}</p>
                                         <button class="slds-button slds-button_brand" onclick={handleResolveCase}>Resolve</button>
-                                        <!-- <h2>Number of Open Cases</h2>
-                                        {openCaseCount} -->
                                         
                                 </div>
                         </template>
@@ -25,4 +25,8 @@
                         <p>Error Loading Data</p>
                 </template>
         </div>
+
+
+<!-- <h1>account combobox</h1>
+        <lightning-combobox label="Account Name" value={selectedAccountId} options={accountOptions} onchange={handleAccountChange}></lightning-combobox> -->
 </template>
