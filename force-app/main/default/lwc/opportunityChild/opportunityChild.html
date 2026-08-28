@@ -1,0 +1,12 @@
+<template>
+        <h1>Opportunity Child</h1>
+        <template for:each={opportunityList} for:item="item">
+                <div key={item.Id} class="slds-box slds-m-around_medium">
+                        <p>{item.Name}</p>
+                        <p>{item.Id}</p>
+                        <p>{item.StageName}</p>
+                        <button class="slds-button slds-button_brand" data-id={item.Id} onchange={handleOnChange} onclick={handleOnClick} >Mark closed Won</button>
+                </div>
+
+        </template>
+</template>

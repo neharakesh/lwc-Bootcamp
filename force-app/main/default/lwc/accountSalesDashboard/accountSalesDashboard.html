@@ -1,0 +1,14 @@
+<template>
+        <lightning-card>
+                <lightning-combobox
+                name="progress"
+                label="Status"
+                value={accountId}
+                placeholder="Select Progress"
+                options={accountOptions}
+                onchange={handleChange} ></lightning-combobox>
+
+        <p>Selected value is: {accountId}</p>
+        <c-opportunity-child account-id={accountId}></c-opportunity-child>
+        </lightning-card>
+</template>
