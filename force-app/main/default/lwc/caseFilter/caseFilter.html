@@ -1,0 +1,33 @@
+<template>
+        
+        <lightning-combobox
+                name="progress"
+                label="Account Name"
+                value={accountId}
+                placeholder="Select Progress"
+                options={accountList}
+                onchange={handleAccountID} ></lightning-combobox>
+
+        <p>Selected value is: {accountId}</p>
+
+        <lightning-combobox
+                name="progress"
+                label="Status"
+                value={caseStatus}
+                placeholder="Select Progress"
+                options={status}
+                onchange={handleStatus} ></lightning-combobox>
+
+        <p>Selected value is:{caseStatus}</p>
+
+        <lightning-combobox
+                name="progress"
+                label="Priority"
+                value={casePriority}
+                placeholder="Select Progress"
+                options={priority}
+                onchange={handlePriority} ></lightning-combobox>
+
+        <p>Selected value is: {casePriority}</p>
+
+</template>

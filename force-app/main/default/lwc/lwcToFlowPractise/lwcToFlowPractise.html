@@ -1,0 +1,30 @@
+<template>
+        <!-- Question-1
+        <button class="slds-button brand" onclick={handleOnClick}>click me</button>
+        <template if:true={displayFlow}>
+                <lightning-flow flow-api-name="Customer_Onboarding_Flow" onstatuschange={handleFlowStatus}></lightning-flow>
+                Account Name:{accountName}
+        </template> -->
+
+
+        <!--Question -2 -->
+        <template for:each={caseList} for:item="eachCase">
+                <div key={eachCase.Id} class="slds-box slds-grid slds-wrap">
+                        <div class="slds-size_1-of-2">
+                                <p>{eachCase.Subject}</p>
+                        <p>{eachCase.Status}</p>
+                        <p>{eachCase.CaseNumber}</p>
+                        </div>
+                        <div class="slds-size_1-of-2">
+                                <button class="slds-button slds-button_brand" onclick={handleEsclateButton} data-id={eachCase.Id}>esclate Case</button>
+                        </div>
+                        
+                </div>
+        </template>
+
+        <template if:true={launchFlow}>
+                <lightning-flow flow-api-name="Case_Escalation_Flow" flow-input-variables={inputVariables} onstatuschange={handleStatusChange}></lightning-flow>
+        </template>
+        {lastDisplay};
+
+</template>
