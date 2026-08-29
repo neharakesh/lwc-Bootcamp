@@ -57,5 +57,17 @@ public with sharing class casesHandler {
             throw new AuraHandledException(e.getMessage());
         }
     }
+
+
+
+
+    @AuraEnabled(Cacheable=true)
+    public static List<Case> getCaseListByAccountId(String accountId){
+        try {
+            return [SELECT id,CaseNumber,Status,Priority,Subject,AccountId FROM Case WHERE Status!='Closed' AND AccountId= :accountId ];
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
     
 }

@@ -1,0 +1,14 @@
+<template>
+        <lightning-record-form record-id={recordId} object-api-name="Account" fields={fields}>
+        </lightning-record-form>
+        <template for:each={caseList} for:item="eachCase">
+                <div key={eachCase.Id} class="slds-box slds-m-around_medium slds-p-around_small">
+                        <p>{eachCase.subject}</p>        
+                        <p>{eachCase.CaseNumber}</p>       
+                </div>
+        </template>
+        <button class="slds-button slds-button_brand" onclick={handleOnClick}>Rating</button>
+        <template if:true={launchFlow}>
+                <lightning-flow flow-api-name="Customer_Review_Flow" flow-input-variables={inputVariables} onstatuschange={handleStatusChange}></lightning-flow>
+        </template>
+</template>
