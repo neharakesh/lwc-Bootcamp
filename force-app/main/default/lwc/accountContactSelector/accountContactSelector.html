@@ -1,0 +1,24 @@
+<template>
+        <lightning-combobox
+                name="Account"
+                label="Account Name"
+                value={accountId}
+                placeholder="Select Account"
+                options={accountList}
+                onchange={handleAccountChange} ></lightning-combobox>
+
+        <p>Selected value is: {accountId}</p>
+        <template if:true={showContacts}>
+                <lightning-combobox
+                name="Contact"
+                label="Contact Name"
+                value={contactId}
+                placeholder="Select Account"
+                options={contactList}
+                onchange={handleContactChange} ></lightning-combobox>
+                <p>Selected value is: {contactId}</p>
+        </template>
+        
+
+        
+</template>
