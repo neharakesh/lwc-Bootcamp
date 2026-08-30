@@ -1,3 +1,34 @@
 <template>
-    
+        <lightning-card>
+                <template for:each={accountList} for:item="account">
+                        <div key={account.Name}>
+                                <p>{account.Name}</p>
+                        </div>
+                </template>
+
+                <template for:each={contactList} for:item="contact">
+                        <div key={contact.Name}>
+                                <p>{contact.Name}</p>
+                        </div>
+                </template>
+
+                <template for:each={opprtunityList} for:item="contact">
+                        <div key={contact.Name} onclick={handleOpportunityOnClick} data-id={contact.Id}>
+                                <p>{contact.Name}</p>
+                        </div>
+                </template>
+
+                <template for:each={caseList} for:item="contact">
+                        <div key={contact.Name}>
+                                <p>{contact.Subject}</p>
+                        </div>
+                </template>
+
+                <div>
+                        <!-- {countContact}
+                        {countCase}
+                        {countOpp}
+                        {oppAmount} -->
+                </div>
+        </lightning-card>
 </template>
