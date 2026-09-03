@@ -87,4 +87,33 @@ public with sharing class opportunityHandler {
                 }
 
         }
+
+
+
+
+
+        ///opportunity related to accounts
+        public static void updateOpportunity(List<Opportunity> newList,Map<Id,Opportunity> oldMap){
+            Set<Id> setaccountId=new Set<Id>();
+            for(Opportunity opp:newList){
+                Opportunity oldOpp=oldMap.get(opp.Id);
+                if(oldOpp.id==opp.id && (oldOpp.AccountId!=opp.AccountId || oldOpp.StageName!=opp.StageName)){
+                    setaccountId.add(opp.Id);
+                }
+                if(opp.AccountId!=null){
+                    setaccountId.add(opp.AccountId);
+                }
+            }
+
+            if(setaccountId.isEmpty()){
+                return;
+            }
+
+            //get all the opportunites which has account ids in set id
+            List<AggregateResult> result=[SELECT accountId,Sum(Amount) TotalAmount,StageName FROM Opportunites WHERE accountId=:setaccountId AND StageName='Closed Won'];
+
+            Map<Id,AggregateResult> resultMap=new Map<Id,AggregateResult>();
+            
+
+        }
 }

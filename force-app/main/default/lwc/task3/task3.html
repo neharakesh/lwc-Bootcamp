@@ -1,0 +1,25 @@
+<template>
+        <div style="height: 300px;">
+        <lightning-datatable
+                key-field="Id"
+                data={propertyList}
+                max-row-selection="2"
+                onrowselection={handleRowSelection}
+                columns={columns}>
+        </lightning-datatable>
+        <lightning-button label="Proceed with merge" onclick={handleProceedMerge}></lightning-button>
+
+        
+    </div>
+    <template if:true={childComponent}>
+                <lightning-datatable
+                key-field="Id"
+                data={selectIdList}
+                columns={columns}
+                max-row-selection="1"
+                onrowselection={handleprimary}
+                >
+        </lightning-datatable>
+        <lightning-button label="merge" onclick={handleMerge}></lightning-button>
+        </template>
+</template>
