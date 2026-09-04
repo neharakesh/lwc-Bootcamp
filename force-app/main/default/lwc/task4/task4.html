@@ -1,0 +1,22 @@
+<template>
+        <div style="height: 300px;">
+        <lightning-button onclick={handleCreateCommision} label="Create Commission"></lightning-button>
+        <template if:true={createCommission}>
+                <lightning-flow flow-api-name="task4CreateCommission"></lightning-flow>
+        </template>
+        
+        <h1>Commission</h1>
+
+                <lightning-datatable
+                key-field="Id"
+                show-row-number-column
+                row-number-offset={rowOffset}
+                draft-values={draftValues}
+                data={CommissionList}
+                columns={columns}
+                onsave={handleSave}
+                onrowaction={handleRowAction}>
+                </lightning-datatable>
+
+        </div>
+</template>
